@@ -1,0 +1,81 @@
+﻿.login-box {
+    position: relative;
+    margin: auto;
+}
+
+.login-back {
+    max-width: 500px;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+}
+
+.lb-header {
+    position: relative;
+    color: darkgoldenrod;
+    margin: 5px 5px 15px 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+    .lb-header a {
+        margin: 0 25px;
+        padding: 0 20px 10px;
+        text-decoration: none;
+        color: #593f02;
+        font-weight: bold;
+        font-size: 18px;
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+    }
+
+        .lb-header a:hover {
+            text-decoration: none;
+            color: darkgoldenrod;
+        }
+
+        .lb-header .active {
+            color: #1c1401;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+.social-login {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+}
+
+    .social-login-btn {
+        margin: 0px 10px 20px;
+    }
+
+.email-login, .email-signup {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.forgot-password {
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #593f02;
+    font-size: 16px;
+    padding: 5px;
+}
+
+    .forgot-password:hover {
+        color: #1c1401;
+        font-size: 18px;
+        text-decoration: none;
+    }

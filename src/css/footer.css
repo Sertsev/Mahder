@@ -1,0 +1,55 @@
+﻿.footer {
+    width: 99.4vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(148, 95, 233);
+    color: darkgoldenrod;
+    bottom: 0px;
+    padding: 20px;
+    margin: 8px -8px -8px -8px;
+    animation: navbar 7s infinite;
+}
+
+.copyright {
+    border-top: 2px groove lightgoldenrodyellow;
+    padding-top: 20px;
+    color: darkgoldenrod;
+}
+
+.copy_text {
+    font-size: 16px;
+    text-align: center;
+}
+
+.footer>h1 {
+    text-align: center;
+    border-bottom: 2px groove lightgoldenrodyellow;
+    color: darkgoldenrod;
+}
+
+.footer p {
+    padding: 0 10px;
+    text-align: justify;
+    font-size: 18px;
+    color: darkgoldenrod;
+}
+
+
+/* contact form css */
+
+.contact_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header_bar {
+    height: 4px;
+    width: 70px;
+    margin-bottom: 20pt;
+    background: darkgoldenrod;
+}
