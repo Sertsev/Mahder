@@ -35,7 +35,6 @@ namespace Mahder
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select top 1 * from Banks order by id desc";
             int busId = (int)cmd.ExecuteScalar();
-            //cmd.ExecuteNonQuery();
 
             businessName.Text = "";
             ownerFullName.Text = "";
