@@ -1,4 +1,4 @@
-# Mahder_
+# Mahder
 A business Phone directory for ethiopian small, huge and startup business. 
 
 This is a project for the Gebeya 3 months bootcamp training and to be continued after presentation.
