@@ -15,34 +15,30 @@
 
             <div class="login-box">
                 <div class="lb-header">
-                    <a href="#" class="active" id="login-box-link">Login</a>
-                    <a href="#" id="signup-box-link">Sign Up</a>
+                    <a href="#" class="active" id="login-box-link" onclick="javascript:log_sign_switch('email-login', 'email-signup');">Login</a>
+                    <a href="#" id="signup-box-link" onclick="javascript:log_sign_switch('email-signup', 'email-login');">Sign Up</a>
                 </div>
-<%--                <div class="social-login">
-                    <a href="#" class="custom-btn btn-5 btn-flt-rt social-login-btn">
-                        <i class="fa fa-facebook fa-lg"></i>
-                        Login in with Facebook
-                    </a>
-                    <a href="#" class="custom-btn btn-5 btn-flt-rt social-login-btn">
-                        <i class="fa fa-google-plus fa-lg"></i>
-                        Log in with Google
-                    </a>
-                </div>--%>
-                <div class="email-login">
+                <div class="<%--social-login--%> u-form-group" style="margin-bottom: -15px; color: red;">
+                    <asp:Label ID="incorrectPE" CssClass="incorrect" runat="server" style="font-size: large; font-family: 'Times New Roman', Times, serif; font-style: oblique;" Text=""></asp:Label>
+                </div>
+                <div class="email-login" id="email-login">
                     <div class="u-form-group">
-                        <input id="loginEmail" type="email" placeholder="Email" class="inp_f" runat="server" />
+                        <input id="loginEmail" type="email" placeholder="Email" class="inp_f" runat="server" required />
                     </div>
+                    <p id="invalidEmail"></p>
                     <div class="u-form-group">
-                        <input id="loginPassword" type="password" placeholder="Password" class="inp_f" runat="server" />
+                        <input id="loginPassword" type="password" placeholder="Password" class="inp_f" runat="server" required />
                     </div>
+                    <p id="invalidPassword"></p>
                     <div class="u-form-group">
-                        <asp:Button ID="mahiLogIn" runat="server" Text="Log In" CLASS="custom-btn btn-5 btn-flt-rt" OnClick="login_Click"  />
+                        <%--<asp:Button ID="mahiLogInn" runat="server" Text="Log In" CLASS="custom-btn btn-5 btn-flt-rt" OnClick="login_Clickdd" />--%>
+                        <asp:Button ID="mahiLogIn" runat="server" Text="Log In" CLASS="custom-btn btn-5 btn-flt-rt" OnClick="Login_Click" />
                     </div>
                     <div class="u-form-group">
                         <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
                 </div>
-                <div class="email-signup">
+                <div class="email-signup hideDiv" id="email-signup">
                     <div class="u-form-group">
                         <input id="firstName" name="firstName" type="text" placeholder="First Name" class="inp_f" runat="server" />
                     </div>
@@ -77,7 +73,7 @@
                         </select>
                     </div>
                     <div class="u-form-group">
-                        <asp:Button ID="signUp" runat="server" Text="Sign Up" CLASS="custom-btn btn-5 btn-flt-rt" OnClick="signup_Click"  />
+                        <asp:Button ID="signUp" runat="server" Text="Sign Up" CLASS="custom-btn btn-5 btn-flt-rt" OnClick="Signup_Click"  />
                     </div>
                 </div>
             </div>

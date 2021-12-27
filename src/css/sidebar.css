@@ -1,0 +1,125 @@
+* {
+    text-decoration: none;
+    list-style-type: none;
+    font-family: fantasy;
+    font-size: 20px;
+    font-weight: 200;
+    color: darkgoldenrod;
+}
+
+.nav_dash {
+    position: fixed;
+    width: 250px;
+    background-color: rgb(39, 28, 15);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    left: 0%;
+    top: 0%;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.hide_div {
+    display: none;
+}
+
+.close_menu {
+    animation: close_menu 1s 1;
+}
+
+.open_menu {
+    animation: open_menu 1s 1;
+}
+
+.logo_dash {
+    padding: 50px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 10px black;
+}
+
+.ul_dash {
+    padding: 0 10px 0;
+
+}
+
+.menu_dash {
+    padding: 20px;
+    margin: 0px;
+    box-shadow: 0.25px 0.5px 1px black;
+}
+
+.menu_dash > a {
+    text-decoration: none;
+    color: darkgoldenrod;
+}
+
+.menu_dash:hover > a,
+.active_dash > a {
+    color: cornsilk;
+}
+
+.menu_dash:hover, .active_dash {
+    position: relative;
+    font-size: 1rem;
+    box-shadow: 2px 3px 10px black inset;
+}
+
+.menu_icon {
+    position: fixed;
+    width: 55px;
+    padding: 1px 1px;
+    margin: 0 10px;
+    z-index: 10;
+}
+
+.menu_icon > .dash_icon {
+    margin-bottom: auto;
+    margin-top: auto;
+    border: auto;
+    margin: 5px;
+    border: 2px groove rgb(39, 28, 15);
+    border-radius: 50%;
+}
+
+.menu_icon:hover > .dash_icon {
+    border: 2.2px groove rgb(138, 79, 6);
+    border-radius: 35%;
+}
+
+#cloz {
+    position: fixed;
+    left: 254px;
+    background-color: rgb(39, 28, 15);
+    border-radius: 70%;
+    width: 40px;
+    padding: 10px;
+    font-size: small;
+    text-align: center;
+    justify-content: center;
+    margin: 5px -5px;
+    z-index: -1;
+    transition: ease-in;
+}
+
+#cloz:hover {
+    color: cornsilk;
+    box-shadow: 2px 3px 10px black inset;
+}
+
+/* animation */
+
+@keyframes open_menu {
+    0% { left: -300px; background-color: rgb(39, 28, 15, 0); }
+    100% { display: block; transition: ease-out; background-color: rgb(39, 28, 15, 1); }
+}
+
+@keyframes close_menu {
+    0% {  background-color: rgb(39, 28, 15, 0); }
+    100% { display: block; left: -300px; transition: ease-out; background-color: rgb(39, 28, 15, 1); }
+}

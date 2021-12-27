@@ -1,12 +1,4 @@
-﻿
-/* dropdown CSS */
-
-.drop_it {
-    display:none;
-}
-
-
-/* nav css */
+﻿/*********************************** nav css *****************************/
 
 .navbar_s {
     width: 100vw;
@@ -17,91 +9,244 @@
     align-items: center;
     background-color: rgb(148, 95, 233);
     top: 0px;
-    padding: 5px 30px;
+    padding: 0px 30px;
     z-index: 1;
     animation: navbar 7s infinite;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
 }
 
-    .navbar_s > ul {
-        display: flex;
-        flex-direction: row;
-        margin-right: 20px;
-        flex: 50%;
-        justify-content: center;
-    }
+.navbar_owner {
+    background-color: rgb(23, 34, 21);
+    animation: navbar_owner 7s infinite;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 10%;
+}
 
-    .navbar_s > div {
-        margin-right: 0px;
-    }
+.navbar_users {
+    background-color: rgb(104, 75, 38);
+    animation: navbar_user 7s infinite;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
 
-    .navbar_s > ul > li {
-        padding: 10px;
-        margin: 2px 15px;
-        position: relative;
-    }
+.navbar_s>ul {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    flex: 50%;
+    justify-content: center;
+}
 
-        .navbar_s > ul > li > a {
-            color: goldenrod;
-            font-size: 20px;
-            
-            text-decoration: none;
-        }
+.navbar_s>div {
+    margin-right: 0px;
+}
 
-        .navbar_s > ul > li:hover, .active_s {
-            background-color: rgb(14, 10, 1);
-        }
+.navbar_s>ul>li {
+    padding: 10px;
+    margin: 2px 15px;
+    position: relative;
+}
 
-        .navbar_s > ul > li:hover {
-            color: darkgoldenrod;
-            background: transparent;
-            box-shadow: none;
-        }
+.navbar_a {
+    color: goldenrod;
+    font-size: 20px;
+    text-decoration: none;
+    min-height: 30px;
+}
 
-        .navbar_s > ul > li:before,
-        .navbar_s > ul > li:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 2px;
-            width: 0;
-            background-color: darkgoldenrod;
-            /*box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;*/
-            transition: 400ms ease all;
-        }
+.navbar_a:hover, .active_s {
+    text-decoration: none;
+    color: whitesmoke;
+}
 
-        .navbar_s > ul > li:after {
-            right: inherit;
-            top: inherit;
-            left: 0;
-            bottom: 0;
-        }
+.navbar_s>ul>li:focus
+/* .active_s  */
+{
+    background-color: rgb(14, 10, 1);
+}
 
-        .navbar_s > ul > li:hover:before,
-        .navbar_s > ul > li:hover:after {
-            width: 100%;
-            transition: 800ms ease all;
-        }
+.navbar_s>ul>li:hover {
+    color: darkgoldenrod;
+    background-color: rgb(68, 52, 2, 0.1);
+    border-radius: 10px;
+}
 
+.drop_it {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 190px;
+    padding: 20px 17px 20px;
+    margin-right: 18px;
+    background-color: rgb(68, 52, 2, 0.8);
+    border-radius: 10px;
+    font-size: revert;
+    border-top-right-radius: 0;
+}
 
-/* nav background */
+.drop_it .navbar_a {
+    color: whitesmoke;
+    padding: 5px;
+}
 
+.drop_it .navbar_a:hover {
+    color: goldenrod;
+    /* background-color: #3936363b;
+    padding: 5px 10px;
+    border-radius: 5px; */
+}
+
+/* nav background animation */
 
 @keyframes navbar {
     0% {
         background-color: rgb(14, 28, 29);
     }
-
     50% {
         background-color: rgb(13, 21, 49);
     }
-
     100% {
-        background-color: rgb(17, 35, 37);
+        background-color: rgb(14, 28, 29);
     }
 }
 
+@keyframes navbar_owner { 
+    0% {
+        background-color: rgb(23, 34, 21);
+    }
+    50% {
+        background-color: rgb(78, 61, 35);
+    }
+    100% {
+        background-color: rgb(23, 34, 21);
+    }
+}
 
-/* nav css ends */
+@keyframes navbar_user { 
+    0% {
+        background-color: rgb(36, 36, 38);
+    }
+    50% {
+        background-color: rgb(32, 11, 11);
+    }
+    100% {
+        background-color: rgb(36, 36, 38);
+    }
+}
+
+/* user profile css */
+
+.userProfile, .userPro {
+    color: #fff;
+    border-radius: 55%;
+    padding: 5px 10px;
+    font-size: small;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+}
+
+.userProfile:hover {
+    background-color: rgb(161, 161, 161, 0.2);
+}
+
+.up_drop {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    width: 150px;
+    padding: 10px 17px 20px;
+    background-color: rgba(87, 86, 83, 0.7);
+    border-radius: 10px;
+    font-size: revert;
+    border-top-right-radius: 32px;
+}
+
+.up_drop li, #mahiLogOut {
+    font-size: large;
+    padding: 0px 3px;
+    color: gold;
+    background: transparent;
+    border: none;
+    width: 100;
+}
+
+.up_drop hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.up_drop li:hover, #mahiLogOut {
+    border-radius: 5px;
+    font-size: larger;
+    padding: 1.8px 0;
+}
+
+#up_icon:hover + .up_drop,
+.up_drop:hover {
+    display: block;
+}
+
+.dash {
+    margin: revert;
+    border: 3px solid darkgoldenrod;
+}
+/* user Profile css end */
+
+/* media query to responsiveness */
+
+@media screen and (max-width: 480px) {
+    .userProfile, .userPro {
+        padding: 0;
+    }
+
+    .navbar_s {
+        padding-right: 10px;
+    }
+
+    .navbar_s > div {
+        margin-right: -10px;
+        margin-left: auto;
+    }
+
+    .navbar_s > ul {
+        display: none;
+    }
+
+    .dashes {
+        display: block;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .userProfile, .userPro {
+        padding: 0;
+    }
+
+    .navbar_s {
+        padding-right: 15px;
+    }
+
+    .navbar_s > div {
+        margin-right: 0px;
+        margin-left: auto;
+    }
+
+    .navbar_s > ul {
+        display: none;
+    }
+
+    .dashes {
+        display: block;
+    }
+}
+
+/************************* nav css ends ****************************/

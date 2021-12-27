@@ -1,0 +1,23 @@
+.wiki-search-group {
+    z-index: 0;
+}
+
+.wiki-search {
+    background-color: rgb(170, 159, 159);
+    border-radius: 2rem;
+    color: black;
+    padding: 10px 16px;
+    font-size: large;
+    width: 92%;
+    transition: border-radius 500ms ease;
+    z-index: 1;
+}
+
+.wiki-search:focus {
+    z-index: 1;
+    border-radius: 0;
+}
+
+.modify_div_css {
+    margin: auto;
+}

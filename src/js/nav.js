@@ -1,5 +1,4 @@
 ﻿jQuery(document).ready(function($) {
-
     var Mwidth = 960; // mobile devices
     if ($(window).width() > Mwidth) {
         var headerHeight = $('.main-menu').height();

@@ -23,20 +23,6 @@
     text-align: center;
 }
 
-.footer>h1 {
-    text-align: center;
-    border-bottom: 2px groove lightgoldenrodyellow;
-    color: darkgoldenrod;
-}
-
-.footer p {
-    padding: 0 10px;
-    text-align: justify;
-    font-size: 18px;
-    color: darkgoldenrod;
-}
-
-
 /* contact form css */
 
 .contact_flex {

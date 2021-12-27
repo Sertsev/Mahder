@@ -1,66 +1,268 @@
-﻿<nav class=".nav_mp navbar_s" id="menu">
-    <div>
+﻿<% if (Session["id"] != null) { %>
+
+    <% if (((string)Mahder.Site1.userInfo["userType"] == "Admin") || ((string)Mahder.Site1.userInfo["userType"] == "Officer"))  { %>
+        <section class="nav_dash hide_div" id="nav_dash">
+            <div onclick="close_menu('nav_dash')" id="cloz">
+                X
+            </div>
+            <div class="logo_dash">
+                <img src="./src/img/logo.png" alt="Mahder Logo" width="150px" />
+            </div>
+    
+            <ul class="ul_dash">
+                <li id="dashboard" class="active_dash menu_dash" onclick="dash_active('dashboard')"><a href="AdminDashboard.aspx"> <i class="nav_fa fa fa-tachometer" aria-hidden="true"> </i> Dashboard</a></li>
+                <li id="catagories" class="menu_dash" onclick="dash_active('catagories')"><a href="#"> <i class="nav_fa fa fa-list-alt" aria-hidden="true"> </i> Catagories</a></li>
+                <li id="business_type" class="menu_dash" onclick="dash_active('business_type')"><a href="Owners.aspx"> <i class="nav_fa fa fa-suitcase" aria-hidden="true"> </i> B. Owners</a></li>
+                <li id="users" class="menu_dash" onclick="dash_active('users')"><a href="Users.aspx"> <i class="nav_fa fa fa-users" aria-hidden="true"> </i> Users</a></li>
+                <% if ((string)Mahder.Site1.userInfo["userType"] == "Admin") { %>
+                <li id="staff" class="menu_dash" onclick="dash_active('staff')"><a href="Staff.aspx"> <i class="nav_fa fa fa-user-secret" aria-hidden="true"> </i> Staffs</a></li>
+                <li id="tasks" class="menu_dash" onclick="dash_active('tasks')"><a href="#"> <i class="nav_fa fa fa-tasks" aria-hidden="true"> </i> Tasks</a></li>
+                <% } else if ((string)Mahder.Site1.userInfo["userType"] == "Officer") { %>
+                    <li id="tasks" class="menu_dash" onclick="dash_active('tasks')"><a href="#">My Tasks</a></li>
+                <% } %>
+            </ul>
+            <div class="menu_dash">
+                <a href="#" > <i class="nav_fa fa fa-user-o" aria-hidden="true"></i> <%Response.Write(Session["name"]);%> : (<%=Mahder.Site1.userInfo["Id"]%>)</a>
+            </div>
+
+            <div class="menu_dash" OnClick="Logout_Click()">
+                <i class="nav_fa fa fa-power-off" aria-hidden="true"> </i> Log Out
+            </div>
+        </section>
+    
+        <section>
+            <div class="menu_icon" id="opn" onclick="open_menu('nav_dash')">
+                <hr class="dash_icon" />
+                <hr class="dash_icon" />
+                <hr class="dash_icon" />
+            </div>
+        </section>
+
+    <% } else if ((string)Mahder.Site1.userInfo["userType"] == "Business Owner") { %>
+
+        <nav class=".nav_mp navbar_s navbar_owner"  runat="server">
+            <div class="dashes hideDiv" style="margin-right: 10px;margin-left: -15px;">
+                <hr class="dash" width="30px">
+                <hr class="dash" width="30px">
+                <hr class="dash" width="30px">
+            </div>
+        
+            <div class="logo">
+                <a href="./index.aspx">
+                    <img src="./src/img/logo.png" alt="Mahder Logo" width="150px" />
+                </a>
+            </div>
+        
+            <ul>
+                <li><a class="navbar_a active_s" href="./home.aspx"> <i class="nav_fa fa fa-tachometer" aria-hidden="true"></i> Dashboard </a></li>
+                <li><a class="navbar_a" href="#"> <i class="nav_fa fa fa-suitcase" aria-hidden="true"></i> My Businesses </a></li>
+                <li><a class="navbar_a" href="#"> <i class="nav_fa fa fa-heart" aria-hidden="true"> </i> Favorites </a></li>
+                <li><a class="navbar_a" href="./about.aspx"> <i class="nav_fa fa fa-info-circle" aria-hidden="true"> </i> About </a></li>
+            </ul>
+        
+            <div>
+                <button class="custom-btn btn-5 btn-flt-rt" type="button" data-toggle="modal" data-target="#myModal" tabindex="-1">Add Business Info </button>
+            </div>
+
+            <div class="userPro" runat="server">
+                <div class="userProfile" onclick="up_dropDown('up_drop')"><i style="color:wheat" class="fa fa-user-circle fa-3x" aria-hidden="true"></i></div>
+                <ul id="up_drop" class="up_drop hideDiv">
+                    <h5> <%Response.Write(Session["name"]);%> : (<%=Mahder.Site1.userInfo["Id"]%>) </h5>
+                    <li> View Profile </li>
+                    <hr />
+                    <li runat="server" OnClick="Logout_Click()"> Log Out </li>
+                </ul>
+            </div>
+
+            </nav>
+    <% } else if ((string)Mahder.Site1.userInfo["userType"] == "User") { %>
+
+        <nav class=".nav_mp navbar_s navbar_users" runat="server">
+            <div class="dashes hideDiv" style="margin-right: 10px;margin-left: -15px;">
+                <hr class="dash" width="30px">
+                <hr class="dash" width="30px">
+                <hr class="dash" width="30px">
+            </div>
+        
+            <div class="logo">
+                <a href="./index.aspx">
+                    <img src="./src/img/logo.png" alt="Mahder Logo" width="150px" />
+                </a>
+            </div>
+        
+            <ul>
+                <li class="active_s"><a class="navbar_a" href="./home.aspx"> <i class="nav_fa fa fa-home" aria-hidden="true"> </i> Home </a></li>
+                <li>
+                    <a class="navbar_a" href="" onclick="up_dropDown('Catagories_drop')"> <i class="nav_fa fa fa-list-alt" aria-hidden="true"> </i> Catagories ▼ </a>
+                    <ul class="drop_it hideDiv" id="Catagories_drop">
+                        <li>
+                            <a class="navbar_a" href="#">Business Type</a>
+                        </li>
+                        <hr />
+                        <li>
+                            <a class="navbar_a" href="#">By Location</a>
+                        </li>
+        
+                    </ul>
+                </li>
+                <li><a class="navbar_a" href=""> <i class="nav_fa fa fa-heart" aria-hidden="true"> </i> Favorites </a></li>
+                <li><a class="navbar_a" href="#contact"> <i class="nav_fa fa fa-send" aria-hidden="true"> </i> Contact </a></li>
+                <li><a class="navbar_a" href="./about.aspx"> <i class="nav_fa fa fa-info-circle" aria-hidden="true"> </i> About </a></li>
+            </ul>
+        
+            <div>
+                <button class="custom-btn btn-5 btn-flt-rt" type="button" data-toggle="modal" data-target="#myModal" tabindex="-1">Add Business Info </button>
+            </div>
+
+            <div class="userPro" runat="server">
+                <div class="userProfile" onclick="up_dropDown('up_drop')"><i style="color:wheat" class="fa fa-user-circle fa-3x" aria-hidden="true"></i></div>
+                <ul id="up_drop" class="up_drop hideDiv">
+                    <h5> <%Response.Write(Session["name"]);%> : (<%=Mahder.Site1.userInfo["Id"]%>) </h5>
+                    <li> View Profile </li>
+                    <hr />
+                    <li runat="server" OnClick="Logout_Click()"> Log Out </li>
+                    
+                </ul>
+            </div>
+
+        </nav>
+    <% } %>
+
+<% } else { %>
+        <nav class=".nav_mp navbar_s" id="menu" runat="server">
+            <div class="dashes hideDiv" style="margin-right: 10px;margin-left: -15px;">
+                <hr class="dash" width="30px">
+                <hr class="dash" width="30px">
+                <hr class="dash" width="30px">
+            </div>
+        
+            <div class="logo">
+                <a href="./index.aspx">
+                    <img src="./src/img/logo.png" alt="Mahder Logo" width="150px" />
+                </a>
+            </div>
+        
+            <ul>
+                <li class="active_s"><a class="navbar_a" href="./home.aspx">Home</a></li>
+                <li>
+                    <a class="navbar_a" href="#" onclick="up_dropDown('Catagories_drop'); return false;">Catagories ▼ </a>
+                    <ul class="drop_it hideDiv" id="Catagories_drop">
+                        <li>
+                            <a class="navbar_a" href="#">Business Type</a>
+                        </li>
+                        <hr />
+                        <li>
+                            <a class="navbar_a" href="#">By Location</a>
+                        </li>
+        
+                    </ul>
+                </li>
+                <li><a class="navbar_a" href="#">Featured</a></li>
+                <li><a class="navbar_a" href="#contact">Contact</a></li>
+                <li><a class="navbar_a" href="./about.aspx">About</a></li>
+            </ul>
+        
+            <div>
+                <button class="custom-btn btn-5 btn-flt-rt" type="button" data-toggle="modal" data-target="#myModal" tabindex="-1">Add Business Info </button>
+            </div>
+
+            <div>
+                <button class="custom-btn btn-5 btn-flt-rt" type="button" onclick="location.href = './Login.aspx';"> Sign In </button>
+            </div>
+            </nav>
+        <% } %>
+        <asp:Button ID="mahiLogOut" runat="server" style="display: none;" Text="Log Out" OnClick="Logout_Click" />
+<!-- 
+<nav class=".nav_mp navbar_s" id="menu1" runat="server">
+    <div class="dashes hideDiv" style="margin-right: 10px;margin-left: -15px;">
+        <hr class="dash" width="30px">
+        <hr class="dash" width="30px">
+        <hr class="dash" width="30px">
+    </div>
+
+    <div class="logo">
         <a href="./index.aspx">
             <img src="./src/img/logo.png" alt="Mahder Logo" width="150px" />
-            </a>
+        </a>
     </div>
 
     <ul>
-        <li class="active_s"><a href="./home.aspx">Home</a></li>
+        <% if (Session["id"] != null) { %>
+
+        <% if ((string)Mahder.Site1.userInfo["userType"] == "Admin") { %>
+        <li class="active_s"><a class="navbar_a" href="./home.aspx">Dashboard</a></li>
+        <% } else {%>
+        <li class="active_s"><a class="navbar_a" href="./home.aspx">Home</a></li>
+        <% } %>
+
         <li>
-            <a href="#">Catagories</a>
-            <ul class="drop_it">
+            <a class="navbar_a" href="#" onclick="up_dropDown('Catagories_drop')">Catagories ▼ </a>
+            <ul class="drop_it hideDiv" id="Catagories_drop">
                 <li>
-                    <a href="#">Busines Type</a>
+                    <a class="navbar_a" href="#">Business Type</a>
                 </li>
+                <hr />
                 <li>
-                    <a href="#">By Location</a>
+                    <a class="navbar_a" href="#">By Location</a>
                 </li>
 
             </ul>
         </li>
-        <li><a href="~/featured">Featured</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="./about.aspx">About</a></li>
+
+        
+        <% if ((string)Mahder.Site1.userInfo["userType"] == "Admin") { %>
+        <li><a class="navbar_a" href="#">B.Owners</a></li>
+        <% } else {%>
+        <li><a class="navbar_a" href="#">Featured</a></li>
+        <% } %>
+
+        <% if ((string)Mahder.Site1.userInfo["userType"] == "Admin") { %>
+        <li><a class="navbar_a" href="#">User</a></li>
+        <% } else { %>
+        <li><a class="navbar_a" href="#contact">Contact</a></li>
+        <% } %>
+
+        <% } else { %>
+        <li class="active_s"><a class="navbar_a" href="./home.aspx">Home</a></li>
+        <li>
+            <a class="navbar_a" href="#" onclick="up_dropDown('Catagories_drop')">Catagories ▼ </a>
+            <ul class="drop_it hideDiv" id="Catagories_drop">
+                <li>
+                    <a class="navbar_a" href="#">Business Type</a>
+                </li>
+                <hr />
+                <li>
+                    <a class="navbar_a" href="#">By Location</a>
+                </li>
+
+            </ul>
+        </li>
+        <li><a class="navbar_a" href="#">Featured</a></li>
+        <li><a class="navbar_a" href="#contact">Contact</a></li>
+        <% } %>
+        <li><a class="navbar_a" href="./about.aspx">About</a></li>
     </ul>
 
     <div>
         <button class="custom-btn btn-5 btn-flt-rt" type="button" data-toggle="modal" data-target="#myModal" tabindex="-1">Add Business Info </button>
     </div>
+
+    <% if (Session["id"] != null) { %>
+    <div class="userPro" runat="server">
+        <div class="userProfile" onclick="up_dropDown('up_drop')"><i class="fa fa-user-circle fa-3x" aria-hidden="true"></i></div>
+        <ul id="up_drop" class="up_drop hideDiv">
+            <h5> <%Response.Write(Session["name"]);%> : (<%=Mahder.Site1.userInfo["Id"]%>) </h5>
+            <!--<asp:Label runat="server" Text="Label" id="user_name"></asp:Label>--> <!--
+            <li> View Profile </li>
+            <hr />
+            <li runat="server" OnClick="Logout_Click()"> Log Out </li>
+            <asp:Button ID="mahiLogOut1" runat="server" style="display: none;" Text="Log Out" OnClick="Logout_Click" />
+        </ul>
+        <!-- <button class="custom-btn btn-5 btn-flt-rt" type="button" onclick="location.href = './Login.aspx';"> Sign Out </button> -->
+    </div><!--
+    <% } else { %>
     <div>
         <button class="custom-btn btn-5 btn-flt-rt" type="button" onclick="location.href = './Login.aspx';"> Sign In </button>
     </div>
-</nav>
-
-
-<!--<nav id="m_nav">
-    <div id="logo-div">
-        <img src="~/src/img/logo.png" alt="Mahder Logo" />
-    </div>
-    <div>
-        <div class="main-menu">
-            <ul class="menus">
-                <li><a class="my-mnu" href="#">Home</a></li>
-                <li>
-                    <a class="my-mnu" href="~/catagories">Catagories</a>
-                    <ul>
-                        <li>
-                            <a href="#">Busines Type</a>
-                        </li>
-                        <li>
-                            <a href="#">By Location</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a class="my-mnu" href="~/featured">Featured</a></li>
-                <li><a class="my-mnu" href="#Contact">Contact</a></li>
-                <li><a class="my-mnu" href="~/about">About</a></li>
-            </ul>
-        </div>
-    </div>
-        <div>
-            <button class="custom-btn btn-5 btn-flt-rt" type="button" data-toggle="modal" data-target="#myModal" tabindex="-1">Add Business Info </button>
-            <button class="custom-btn btn-5 btn-flt-rt" type="button"> Sign In </button>
-        </div>
-</nav>-->
+    <% } %>
+</nav> -->
