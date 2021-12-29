@@ -20,11 +20,18 @@ namespace Mahder
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (bankcon.State == ConnectionState.Open)
+            try
             {
-                bankcon.Close();
+                if (bankcon.State == ConnectionState.Open)
+                {
+                    bankcon.Close();
+                }
+                bankcon.Open();
             }
-            bankcon.Open();
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             if (Session["id"] != null)
             {
