@@ -47,19 +47,40 @@ namespace Mahder
             }
             dbcon.Open();
 
-            string businessCatagory = Request.Form["sel_cag"];
+            string businessCatagory = "";
+            string selectedRegion = "";
+            string selectedCity = "";
 
-            //if ( businessCatagory == "All Catagories")
-            //{
+            string searchText = searchInput.Value;
 
-            //}
+            if (sel_cag.SelectedItem.Value != "all")
+            {
+                businessCatagory = sel_cag.SelectedItem.Text;
+            }
 
-            SqlCommand cmd = dbcon.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
-            cmd.ExecuteNonQuery();
-            DataTable bndt = new DataTable();
-            SqlDataAdapter bnda = new SqlDataAdapter(cmd);
+            if (cities.SelectedItem.Value != "all")
+            {
+                selectedCity = "AND city='" + cities.SelectedItem.Text+"'";
+            }
+
+            if (region.SelectedItem.Value != "all")
+            {
+                selectedRegion = "AND region='" + region.SelectedItem.Text + "'";
+            }
+
+            if (businessCatagory != "")
+            {
+                SqlCommand cmd = dbcon.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select top 20 id, businessName, businessType, address, city, region from "
+                    + businessCatagory + " where businessType <> '' AND (businessName LIKE '%"
+                    + searchText + "%' OR about LIKE '%" + searchText + "%') "
+                    + selectedCity + " " + selectedRegion;
+                cmd.ExecuteNonQuery();
+                DataTable bndt = new DataTable();
+                SqlDataAdapter bnda = new SqlDataAdapter(cmd);
+                bnda.Fill(bndt);
+            }
         }
     }
 }

@@ -76,6 +76,7 @@
     <Content Include="home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Owners.aspx" />
+    <Content Include="SearchOutput.aspx" />
     <Content Include="Staff.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="Web.config" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="meseret.Master.designer.cs">
       <DependentUpon>meseret.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOutput.aspx.cs">
+      <DependentUpon>SearchOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchOutput.aspx.designer.cs">
+      <DependentUpon>SearchOutput.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff.aspx.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
