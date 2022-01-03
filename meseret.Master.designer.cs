@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mahder
-{
-
-
-    public partial class Site1
-    {
-
+namespace Mahder {
+    
+    
+    public partial class Site1 {
+        
         /// <summary>
         /// head control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-
+        
         /// <summary>
         /// businessName control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox businessName;
-
+        
         /// <summary>
         /// ownerFullName control.
         /// </summary>
@@ -58,16 +56,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ownerFullName;
-
-        /// <summary>
-        /// businessCatagory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect businessCatagory;
-
+        
         /// <summary>
         /// businessType control.
         /// </summary>
@@ -75,8 +64,8 @@ namespace Mahder
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox businessType;
-
+        protected global::System.Web.UI.WebControls.DropDownList businessType;
+        
         /// <summary>
         /// address control.
         /// </summary>
@@ -85,7 +74,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox address;
-
+        
         /// <summary>
         /// woreda control.
         /// </summary>
@@ -94,7 +83,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox woreda;
-
+        
         /// <summary>
         /// region control.
         /// </summary>
@@ -103,7 +92,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox region;
-
+        
         /// <summary>
         /// city control.
         /// </summary>
@@ -112,7 +101,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox city;
-
+        
         /// <summary>
         /// phoneNumber1 control.
         /// </summary>
@@ -121,7 +110,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox phoneNumber1;
-
+        
         /// <summary>
         /// phoneNumber2 control.
         /// </summary>
@@ -130,7 +119,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox phoneNumber2;
-
+        
         /// <summary>
         /// twitterUname control.
         /// </summary>
@@ -139,7 +128,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox twitterUname;
-
+        
         /// <summary>
         /// facebookUname control.
         /// </summary>
@@ -148,7 +137,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox facebookUname;
-
+        
         /// <summary>
         /// telegramUname control.
         /// </summary>
@@ -157,7 +146,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox telegramUname;
-
+        
         /// <summary>
         /// instagramUname control.
         /// </summary>
@@ -166,7 +155,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox instagramUname;
-
+        
         /// <summary>
         /// linkedinUname control.
         /// </summary>
@@ -175,7 +164,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox linkedinUname;
-
+        
         /// <summary>
         /// website control.
         /// </summary>
@@ -184,7 +173,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox website;
-
+        
         /// <summary>
         /// profilePicture control.
         /// </summary>
@@ -193,7 +182,7 @@ namespace Mahder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload profilePicture;
-
+        
         /// <summary>
         /// add control.
         /// </summary>

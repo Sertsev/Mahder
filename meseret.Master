@@ -52,17 +52,14 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <select id="businessCatagory"  runat="server" Class="inp_f">
-                                                <option value="Finance">Finance</option>
-                                                <option value="Health">Health</option>
-                                                <option value="Real Estate">Real Estate</option>
-                                                <option value="Hotel and Accomadation">Hotel and Accomodation Service</option>
-                                            </select>
+                                            <asp:DropDownList ID="businessType" runat="server" Class="inp_f">
+                                                <asp:ListItem Text="Finance" Value="finance"></asp:ListItem>
+                                                <asp:ListItem Text="Health" Value="health"></asp:ListItem>
+                                                <asp:ListItem Text="Real Estate" Value="housing"></asp:ListItem>
+                                                <asp:ListItem Text="Hotel and Accomodation" Value="hotel"></asp:ListItem>
+                                            </asp:DropDownList>                                                                                                                                                
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:TextBox ID="businessType" runat="server" class="inp_f" placeholder="Business Type"></asp:TextBox></td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td>
                                             <textarea id="about" rows="2" Class="inp_f" placeholder="About the business ..."></textarea>
