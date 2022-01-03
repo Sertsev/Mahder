@@ -39,10 +39,41 @@ namespace Mahder
 
             SqlCommand cmd = bakcon.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
+            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> '' or featured = 1";
             cmd.ExecuteNonQuery();
             DataTable bndt = new DataTable();
             SqlDataAdapter bnda = new SqlDataAdapter(cmd);
+            bnda.Fill(bndt);
+            // Featured.DataSource = bndt;
+            // Featured.DataBind();
+
+            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
+            cmd.ExecuteNonQuery();
+            bnda = new SqlDataAdapter(cmd);
+            bnda.Fill(bndt);
+            //MostViewedByCatagory.DataSource = bndt;
+            //MostViewedByCatagory.DataBind();
+
+            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
+            cmd.ExecuteNonQuery();
+            bndt = new DataTable();
+            bnda = new SqlDataAdapter(cmd);
+            bnda.Fill(bndt);
+            //HighlyRated.DataSource = bndt;
+            //HighlyRated.DataBind();
+
+            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
+            cmd.ExecuteNonQuery();
+            bndt = new DataTable();
+            bnda = new SqlDataAdapter(cmd);
+            bnda.Fill(bndt);
+            //NumberOfBusinessByCatagory.DataSource = bndt;
+            //NumberOfBusinessByCatagory.DataBind();
+
+            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> '' or featured = 1";
+            cmd.ExecuteNonQuery();
+            bndt = new DataTable();
+            bnda = new SqlDataAdapter(cmd);
             bnda.Fill(bndt);
             BanksList.DataSource = bndt;
             BanksList.DataBind();

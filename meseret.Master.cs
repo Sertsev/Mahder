@@ -37,7 +37,7 @@ namespace Mahder
             {
                 userInfo = Mahder.Login.userInfo;
                 var un = userInfo["userType"];
-                int a = 1;
+
             }
         }
 

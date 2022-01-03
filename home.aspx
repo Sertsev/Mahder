@@ -97,15 +97,4 @@
         </div>
     </section>
 
-    <section class="container_s">
-        <div class="div_mp box_center in_div_flex">
-            <div class="div_mp box_left">
-                <h2>Hello</h2>
-            </div>
-
-            <div class="div_mp box_right">
-                <h1>Hi</h1>
-            </div>
-        </div>
-    </section>
 </asp:Content>
