@@ -23,11 +23,19 @@ namespace Mahder
 
         public void disp_banks(SqlConnection bakcon)
         {
-            if (bakcon.State == ConnectionState.Open)
+            try
             {
-                bakcon.Close();
+                if (bakcon.State == ConnectionState.Open)
+                {
+                    bakcon.Close();
+                }
+                bakcon.Open();
             }
-            bakcon.Open();
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Hello " + ex.Message);
+                return;
+            }
 
             SqlCommand cmd = bakcon.CreateCommand();
             cmd.CommandType = CommandType.Text;
