@@ -110,6 +110,10 @@ a:visited {
     top: 90px;
 }
 
+.tableContainer {
+    align-items: self-start;
+}
+
 .box_left {
     flex: 50%;
 }
@@ -133,6 +137,10 @@ a:visited {
     align-items: center;
     width: 100%;
     padding: 5px;
+}
+
+.in_div_flex {
+    flex-direction: column;
 }
 
 

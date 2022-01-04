@@ -39,44 +39,54 @@ namespace Mahder
 
             SqlCommand cmd = bakcon.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> '' or featured = 1";
+            cmd.CommandText = "select top 5 id, businessName, businessType, address, city from Banks where businessType <> '' and featured = 1";
             cmd.ExecuteNonQuery();
             DataTable bndt = new DataTable();
             SqlDataAdapter bnda = new SqlDataAdapter(cmd);
             bnda.Fill(bndt);
-            // Featured.DataSource = bndt;
-            // Featured.DataBind();
+            Featured.DataSource = bndt;
+            Featured.DataBind();
 
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
-            cmd.ExecuteNonQuery();
-            bnda = new SqlDataAdapter(cmd);
-            bnda.Fill(bndt);
-            //MostViewedByCatagory.DataSource = bndt;
-            //MostViewedByCatagory.DataBind();
-
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
+            cmd.CommandText = "select top 5 id, businessName, businessType, address, city from Banks where businessType <> ''";
             cmd.ExecuteNonQuery();
             bndt = new DataTable();
             bnda = new SqlDataAdapter(cmd);
             bnda.Fill(bndt);
-            //HighlyRated.DataSource = bndt;
-            //HighlyRated.DataBind();
+            MostViewedByCatagory.DataSource = bndt;
+            MostViewedByCatagory.DataBind();
 
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> ''";
+            cmd.CommandText = "select top 5 id, businessName, businessType, address, city from Banks where businessType <> ''";
             cmd.ExecuteNonQuery();
             bndt = new DataTable();
             bnda = new SqlDataAdapter(cmd);
             bnda.Fill(bndt);
-            //NumberOfBusinessByCatagory.DataSource = bndt;
-            //NumberOfBusinessByCatagory.DataBind();
+            HighlyRated.DataSource = bndt;
+            HighlyRated.DataBind();
 
-            cmd.CommandText = "select top 20 id, businessName, businessType, address, city from Banks where businessType <> '' or featured = 1";
+            cmd.CommandText = "select top 1 (select count(distinct businessType) from Banks where businessType <> '') as NumberOfCatagories, " +
+                                "(select count(*) from Banks) as NumberOfBusinesses from Banks";
+            cmd.ExecuteNonQuery();
+            bndt = new DataTable();
+            bnda = new SqlDataAdapter(cmd);
+            bnda.Fill(bndt);
+            NumberOfBusinessByCatagory.DataSource = bndt;
+            NumberOfBusinessByCatagory.DataBind();
+
+            cmd.CommandText = "select top 5 id, businessName, businessType, address, city from Banks where businessType <> '' and featured = 1 and businessType='Bank'";
             cmd.ExecuteNonQuery();
             bndt = new DataTable();
             bnda = new SqlDataAdapter(cmd);
             bnda.Fill(bndt);
             BanksList.DataSource = bndt;
             BanksList.DataBind();
+
+            cmd.CommandText = "select top 5 id, businessName, businessType, address, city from Banks where businessType <> '' and businessType='Charity'";
+            cmd.ExecuteNonQuery();
+            bndt = new DataTable();
+            bnda = new SqlDataAdapter(cmd);
+            bnda.Fill(bndt);
+            Charity.DataSource = bndt;
+            Charity.DataBind();
         }
         protected void search_click(object sender, EventArgs e)
         {

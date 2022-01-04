@@ -13,7 +13,8 @@
                 <section>
 
                     <div class="div_mp box_left">
-                        <h1>Welcome to</h1>
+                        <br /> <br />
+                        <p>Welcome to</p>
                     </div>
 
                     <div class="div_mp box_right">
@@ -60,9 +61,11 @@
     </section>
 
     <section class="container_s">
-        <div class="div_mp box_center in_div_flex">
+
+            <div class="div_mp box_center in_div_flex">
+                <h3>Featured Businesses</h3>
             <table class="show_table">
-                <asp:Repeater ID="BanksList" runat="server">
+                <asp:Repeater ID="Featured" runat="server">
                     <HeaderTemplate>
                         <tr class="s_t_head">
                             <td class="s_t_d">ID</td>
@@ -88,13 +91,128 @@
     </section>
 
     <section class="container_s">
-        <div class="div_mp box_left">
-            <h2>Hello</h2>
-        </div>
-
-        <div class="div_mp box_right">
-            <h1>Hi</h1>
+        <div class="div_mp box_center in_div_flex">
+            <h3>Our Achievemnt</h3>
+            <%--<table class="show_table">--%>
+                <asp:Repeater ID="NumberOfBusinessByCatagory" runat="server">
+                    <ItemTemplate>
+                        <div class="div_mp box_center">
+                           <div class="div_mp"> <h1 style="text-align: center; font-size: 100px; padding-right: 50px;" id="noc"><%# Eval("NumberOfCatagories")%></h1> </div>
+                            <div class="div_mp"> <h1 style="text-align: center; font-size: 100px; padding-right: 50px;" id="nob"><%# Eval("NumberOfBusinesses")%></h1> </div>
+                         </div>
+                    </ItemTemplate>
+                </asp:Repeater>
         </div>
     </section>
 
+    <section class="container_s tableContainer">
+
+        <div class="div_mp box_center in_div_flex">
+            <h3>List of Banks</h3>
+            <table class="show_table">
+                <asp:Repeater ID="BanksList" runat="server">
+                    <HeaderTemplate>
+                        <tr class="s_t_head">
+                            <td class="s_t_d">ID</td>
+                            <td class="s_t_d">Business Name</td>
+                            <td class="s_t_d">Business Type</td>
+                            <td class="s_t_d">Address</td>
+                            <td class="s_t_d">City</td>
+                        </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr class="s_t_row">
+                            <td class="s_t_d s_t_d_num"><%# Eval("id")%></td>
+                            <td class="s_t_d"><%# Eval("businessName")%></td>
+                            <td class="s_t_d"><%# Eval("businessType")%></td>
+                            <td class="s_t_d"><%# Eval("address")%></td>
+                            <td class="s_t_d"><%# Eval("city")%></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </table>
+        </div>
+
+        <div class="div_mp box_center in_div_flex">
+            <h3>List of Charity Organizations</h3>
+            <table class="show_table">
+                <asp:Repeater ID="Charity" runat="server">
+                    <HeaderTemplate>
+                        <tr class="s_t_head">
+                            <td class="s_t_d">ID</td>
+                            <td class="s_t_d">Business Name</td>
+                            <td class="s_t_d">Business Type</td>
+                            <td class="s_t_d">Address</td>
+                            <td class="s_t_d">City</td>
+                        </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr class="s_t_row">
+                            <td class="s_t_d s_t_d_num"><%# Eval("id")%></td>
+                            <td class="s_t_d"><%# Eval("businessName")%></td>
+                            <td class="s_t_d"><%# Eval("businessType")%></td>
+                            <td class="s_t_d"><%# Eval("address")%></td>
+                            <td class="s_t_d"><%# Eval("city")%></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </table>
+        </div>
+
+    </section>
+
+    <section class="container_s tableContainer">
+        <div class="div_mp box_center in_div_flex">
+            <h3>Highly Rated Businesses</h3>
+            <table class="show_table">
+                <asp:Repeater ID="HighlyRated" runat="server">
+                    <HeaderTemplate>
+                        <tr class="s_t_head">
+                            <td class="s_t_d">ID</td>
+                            <td class="s_t_d">Business Name</td>
+                            <td class="s_t_d">Business Type</td>
+                            <td class="s_t_d">Address</td>
+                            <td class="s_t_d">City</td>
+                        </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr class="s_t_row">
+                            <td class="s_t_d s_t_d_num"><%# Eval("id")%></td>
+                            <td class="s_t_d"><%# Eval("businessName")%></td>
+                            <td class="s_t_d"><%# Eval("businessType")%></td>
+                            <td class="s_t_d"><%# Eval("address")%></td>
+                            <td class="s_t_d"><%# Eval("city")%></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </table>
+        </div>
+
+        <div class="div_mp box_center in_div_flex">
+            <h3>Most Viewed Businesses</h3>
+            <table class="show_table">
+                <asp:Repeater ID="MostViewedByCatagory" runat="server">
+                    <HeaderTemplate>
+                        <tr class="s_t_head">
+                            <td class="s_t_d">ID</td>
+                            <td class="s_t_d">Business Name</td>
+                            <td class="s_t_d">Business Type</td>
+                            <td class="s_t_d">Address</td>
+                            <td class="s_t_d">City</td>
+                        </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr class="s_t_row">
+                            <td class="s_t_d s_t_d_num"><%# Eval("id")%></td>
+                            <td class="s_t_d"><%# Eval("businessName")%></td>
+                            <td class="s_t_d"><%# Eval("businessType")%></td>
+                            <td class="s_t_d"><%# Eval("address")%></td>
+                            <td class="s_t_d"><%# Eval("city")%></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </table>
+        </div>
+    </section>
+    <script src="./src/js/home.js"></script>
 </asp:Content>

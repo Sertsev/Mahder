@@ -50,7 +50,7 @@ namespace Mahder
             SqlCommand cmd = bankcon.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "insert into Banks(businessName, ownerFullName, businesstype, about, address, woreda, region, city, phonNumber1, phonNumber2, twitterUname, facebookUname, telegramUname, instagramUname, linkedinUname, website)" +
-                "values('"+ businessName.Text  + "', '" + ownerFullName.Text + "', '" + businessType.Text + "', '" + description + "', '" + address.Text + "', '" + woreda.Text + "', '" + region.Text + "', '" + city.Text + "', '" + phoneNumber1.Text + "', '" + phoneNumber2.Text + "', '" + twitterUname.Text + "', '" + facebookUname.Text + "', '" + telegramUname.Text + "', '" + instagramUname.Text + "', '" + linkedinUname.Text + "', '" + website.Text + "')";
+                "values('"+ businessName.Text  + "', '" + ownerFullName.Text + "', '" + businessTypes.Text + "', '" + description + "', '" + address.Text + "', '" + woreda.Text + "', '" + region.Text + "', '" + city.Text + "', '" + phoneNumber1.Text + "', '" + phoneNumber2.Text + "', '" + twitterUname.Text + "', '" + facebookUname.Text + "', '" + telegramUname.Text + "', '" + instagramUname.Text + "', '" + linkedinUname.Text + "', '" + website.Text + "')";
             cmd.ExecuteNonQuery();
             // retriving the user id
             cmd.CommandText = "select top 1 * from Banks order by id desc";
@@ -58,7 +58,7 @@ namespace Mahder
 
             businessName.Text = "";
             ownerFullName.Text = "";
-            businessType.Text = "";
+            businessTypes.Text = "";
             description = "";
             address.Text = "";
             woreda.Text = "";

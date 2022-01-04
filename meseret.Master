@@ -52,7 +52,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:DropDownList ID="businessType" runat="server" Class="inp_f">
+                                            <asp:DropDownList ID="businessTypes" runat="server" AutoPostBack="true" Class="inp_f">
                                                 <asp:ListItem Text="Finance" Value="finance"></asp:ListItem>
                                                 <asp:ListItem Text="Health" Value="health"></asp:ListItem>
                                                 <asp:ListItem Text="Real Estate" Value="housing"></asp:ListItem>
