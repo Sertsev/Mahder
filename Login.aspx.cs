@@ -74,7 +74,7 @@ namespace Mahder
                 {
                     Session["id"] = userInfo["Id"];
                     Session["name"] = userInfo["firstName"];
-                    Response.Redirect("home.aspx?name=" + userInfo["firstName"]);
+                    Response.Redirect("Default.aspx?name=" + userInfo["firstName"]);
                     Session.RemoveAll();
                 }
             }
@@ -88,7 +88,7 @@ namespace Mahder
             //    //    Login1.FailureText = "Account has not been activated.";
             //    //    break;
             //    default:
-            //        Response.Redirect("home.aspx");
+            //        Response.Redirect("Default.aspx");
             //        break;
             //}
         }

@@ -54,7 +54,7 @@
             </div>
         
             <ul>
-                <li><a class="navbar_a active_s" href="./home.aspx"> <i class="nav_fa fa fa-tachometer" aria-hidden="true"></i> Dashboard </a></li>
+                <li><a class="navbar_a active_s" href="./Default.aspx"> <i class="nav_fa fa fa-tachometer" aria-hidden="true"></i> Dashboard </a></li>
                 <li><a class="navbar_a" href="#"> <i class="nav_fa fa fa-suitcase" aria-hidden="true"></i> My Businesses </a></li>
                 <li><a class="navbar_a" href="#"> <i class="nav_fa fa fa-heart" aria-hidden="true"> </i> Favorites </a></li>
                 <li><a class="navbar_a" href="./about.aspx"> <i class="nav_fa fa fa-info-circle" aria-hidden="true"> </i> About </a></li>
@@ -91,7 +91,7 @@
             </div>
         
             <ul>
-                <li class="active_s"><a class="navbar_a" href="./home.aspx"> <i class="nav_fa fa fa-home" aria-hidden="true"> </i> Home </a></li>
+                <li class="active_s"><a class="navbar_a" href="./Default.aspx"> <i class="nav_fa fa fa-home" aria-hidden="true"> </i> Home </a></li>
                 <li>
                     <a class="navbar_a" href="" onclick="up_dropDown('Catagories_drop')"> <i class="nav_fa fa fa-list-alt" aria-hidden="true"> </i> Catagories ▼ </a>
                     <ul class="drop_it hideDiv" id="Catagories_drop">
@@ -143,7 +143,7 @@
             </div>
         
             <ul>
-                <li class="active_s"><a class="navbar_a" href="./home.aspx">Home</a></li>
+                <li class="active_s"><a class="navbar_a" href="./Default.aspx">Home</a></li>
                 <li>
                     <a class="navbar_a" href="#" onclick="up_dropDown('Catagories_drop'); return false;">Catagories ▼ </a>
                     <ul class="drop_it hideDiv" id="Catagories_drop">
@@ -190,9 +190,9 @@
         <% if (Session["id"] != null) { %>
 
         <% if ((string)Mahder.Site1.userInfo["userType"] == "Admin") { %>
-        <li class="active_s"><a class="navbar_a" href="./home.aspx">Dashboard</a></li>
+        <li class="active_s"><a class="navbar_a" href="./Default.aspx">Dashboard</a></li>
         <% } else {%>
-        <li class="active_s"><a class="navbar_a" href="./home.aspx">Home</a></li>
+        <li class="active_s"><a class="navbar_a" href="./Default.aspx">Home</a></li>
         <% } %>
 
         <li>
@@ -223,7 +223,7 @@
         <% } %>
 
         <% } else { %>
-        <li class="active_s"><a class="navbar_a" href="./home.aspx">Home</a></li>
+        <li class="active_s"><a class="navbar_a" href="./Default.aspx">Home</a></li>
         <li>
             <a class="navbar_a" href="#" onclick="up_dropDown('Catagories_drop')">Catagories ▼ </a>
             <ul class="drop_it hideDiv" id="Catagories_drop">

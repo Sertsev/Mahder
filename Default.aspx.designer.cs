@@ -11,7 +11,7 @@ namespace Mahder
 {
 
 
-    public partial class home
+    public partial class Default
     {
 
         /// <summary>

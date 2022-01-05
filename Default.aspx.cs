@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Mahder
 {
-    public partial class home : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         SqlConnection dbcon;
         protected void Page_Load(object sender, EventArgs e)

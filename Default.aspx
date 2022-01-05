@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/meseret.Master" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="Mahder.home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/meseret.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Mahder.Default" %>
 
 <%@ MasterType VirtualPath="~/meseret.Master" %>
 
@@ -92,13 +92,12 @@
 
     <section class="container_s">
         <div class="div_mp box_center in_div_flex">
-            <h3>Our Achievemnt</h3>
-            <%--<table class="show_table">--%>
+            <h3 class="center-block">Our Achievment</h3>
                 <asp:Repeater ID="NumberOfBusinessByCatagory" runat="server">
                     <ItemTemplate>
                         <div class="div_mp box_center">
-                           <div class="div_mp"> <h1 style="text-align: center; font-size: 100px; padding-right: 50px;" id="noc"><%# Eval("NumberOfCatagories")%></h1> </div>
-                            <div class="div_mp"> <h1 style="text-align: center; font-size: 100px; padding-right: 50px;" id="nob"><%# Eval("NumberOfBusinesses")%></h1> </div>
+                           <div class="box_left"> <h1 style="font-size: 80px;" id="noc"><%# Eval("NumberOfCatagories")%></h1> <p>Number of Business catagories</p> </div>
+                            <div class="box_right"> <h1 style="font-size: 80px;" id="nob"><%# Eval("NumberOfBusinesses")%></h1> <p>Number of Registered Businesses</p> </div>
                          </div>
                     </ItemTemplate>
                 </asp:Repeater>
